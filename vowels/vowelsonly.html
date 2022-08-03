@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:rgb(169, 227, 252) ;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <center >
+    
+    <h1 style="background-color:rgb(72, 135, 190);">VOWELS</h1><br>
+     Data: <input type="text" name="text" id="input"  onkeypress="return Validate(event)"><span id="result"></span>
+    </center>
+</body>
+<script>
+     function Validate(event) {
+        var text = document.getElementById("input").value;
+        
+            text = event.keyCode;
+       
+        var span=document.getElementById("result");
+        
+        var regex = (/[aeiouAEIOU]/);
+    
+        var isValid = regex.test(String.fromCharCode(text));
+
+        alert(isValid);
+
+        if (!isValid) {//alert(isValid);
+            span.innerHTML = "This character is Not vowels.";
+            span.style.color="red";
+        }
+        else{//alert(isValid);
+             span.innerHTML = "This character is vowels.";
+            span.style.color="green";
+        }
+        return isValid;
+        
+    }
+</script>
+</html>

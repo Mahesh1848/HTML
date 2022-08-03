@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case insensitive</title>
+</head>
+<body>
+    <h1>2.Username check case insensitive</h1>
+    <p id="username1"></p><br>
+   Username : <input type="text" onblur="checkusername1()" id="uname1"><br>
+  Result: <span id="message1"></span>
+  <hr>
+</body>
+<script>
+    var username1 = "mahi,ragu,mani";
+     document.getElementById("username1").innerHTML=username1;
+     var span = document.getElementById("message1");
+ 
+     function checkusername1() {
+         var uname1 = document.getElementById("uname1").value;
+         var regex = new RegExp(uname1,'i');
+         var check = username1.search(regex);
+         if (check == -1) {
+             span.style.color="green";
+             document.getElementById("message1").innerHTML = "username available";
+             
+         } else {
+             span.style.color="red";
+             document.getElementById("message1").innerHTML = "username already taken";
+            
+             
+         }
+     }
+ </script>
+</html>

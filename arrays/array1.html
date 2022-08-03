@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:rgb(131, 131, 250) ; margin:auto">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body onload="menuDisplay()">
+<u style=" margin:auto ;"><h1>To Do List</h1></u>
+
+
+    Enter Menu: <input type="text" id="menuname"> &nbsp;<span id="texts"></span> <br><br>
+
+    <button onclick="menuManipulate('push')">Push</button> &nbsp;
+    <button onclick="menuManipulate('pop')">Pop</button>&nbsp;
+    <button onclick="menuManipulate('shift')">Shift</button>&nbsp;
+    <button onclick="menuManipulate('unshift')">Unshift</button>&nbsp; <br><br>
+
+    <div id="menu">
+
+    </div> <br>
+
+
+    <div id="editform" style="display: none;">
+        <h2>Edit Menu</h2>
+        Menu: <input type="text" id="editmenu"> <input type="hidden" id="editmenuid"><br><br>
+        <button id="update" onclick="updateData()">Update</button>
+    </div>
+
+    
+</body>
+<script>
+    var menus = ["Home", "About us", "Contact", "Gallery"];
+
+    function menuDisplay() {
+        var dom = "<ul>";
+        for (var i = 0; i < menus.length; i++) {
+            dom += "<li>" + menus[i] + " <button onclick='showEditForm(" + i + ")'>Edit</button> </li>";   // a += b ==> a = a+b;
+        }
+
+        dom += "</ul>";
+
+        document.getElementById("menu").innerHTML = dom;
+
+    }
+
+    function menuManipulate(manipulate) {
+        var menuName = document.getElementById("menuname").value;
+        var span = document.getElementById("texts");
+        switch (manipulate) {
+
+            case "push":
+                if (menuName.trim() == "") {
+
+                    span.innerHTML = "enter data";
+                    span.style.color = "red";
+                    return false;
+                } else {
+                    span.innerHTML = "";
+                }
+                menus.push(menuName);
+
+                break;
+
+            case "pop":
+                menus.pop(menuName);
+                break;
+
+            case "shift":
+                menus.shift(menuName);
+                break;
+
+            case "unshift":
+                if (menuName.trim() == "") {
+
+                    span.innerHTML = "enter data";
+                    span.style.color = "red";
+                    return false;
+                } else {
+                    span.innerHTML = "";
+                }
+                menus.unshift(menuName);
+                break;
+        }
+        console.log(menus);
+        console.log(manipulate);
+        menuDisplay();
+    }
+
+    function showEditForm(index) {
+        console.log(index);
+        document.getElementById("editform").style.display = "block";
+        document.getElementById("editmenu").value = menus[index];
+        document.getElementById("editmenuid").value = index;
+
+
+    }
+
+    function updateData() {
+        var id = document.getElementById("editmenuid").value;
+        menus.splice(id, 1, document.getElementById("editmenu").value);
+
+        menuDisplay();
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slice out </title>
+</head>
+<body>
+    <h1>3. Slice out data</h1>
+    <p id="para">
+        hi all, Good Morning, have a Nice day!!
+    </p>
+        Start: <input type="number" name="" id="start"> <br><br>
+        End: <input type="number" name="" id="end"> <br><br>
+    
+        <button onclick="sliceout()">Slice out</button> &nbsp;<span id="result"></span>
+        <hr>
+    
+</body>
+<script>
+    var para = " hi all, Good Morning, have a Nice day!!";
+    document.getElementById("para").innerHTML=para;
+    var span = document.getElementById("result");
+
+    function sliceout() {
+        var num1 = document.getElementById("start").value;
+        var num2 = document.getElementById("end").value;
+        span.style.color="blue"
+        result = para.slice(num1,num2);
+        document.getElementById("result").innerHTML = result;
+
+    }
+
+</script>
+</html>

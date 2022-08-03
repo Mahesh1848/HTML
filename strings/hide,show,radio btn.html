@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Form Validation based on gender</h1>
+    Name <input type="text"><br><br>
+    Email <input type="text"><br><br>
+    Gender <input type="radio" name="gender" value="male" onclick="myFunction()"> Male <input type="radio" name="gender"
+        value="female" onclick=" myFunction1()"> Female <br><br>
+
+    <div id="myDIV">
+        Phone <input type="text"><br><br>
+        Address <input type="text"><br><br>
+    </div>
+
+    <div1 id="myDIV1">
+        Phone <input type="text"><br><br>
+        Address <input type="text"><br><br>
+    </div1>
+
+    <button>Register</button>
+</body>
+<script>
+    function myFunction() {
+        var div = document.getElementById("myDIV");
+        if (div.style.display === "none") {
+            div.style.display = "block";
+        } else {
+            div.style.display = "none";
+        }
+    }
+</script>
+<script>
+    function myFunction1() {
+        var div1 = document.getElementById("myDIV1");
+        if (div1.style.display === "none") {
+            div1.style.display = "block";
+        } else {
+            div1.style.display = "none";
+        }
+    }
+</script>
+
+</html>

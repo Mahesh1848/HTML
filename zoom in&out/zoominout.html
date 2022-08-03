@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function doZoomIn() {
+            var img = document.getElementById("aveng");
+            var eHeight = img.style.height;
+            var eWidth = img.style.width;
+
+            var nHeight = parseInt(eHeight) + 50 + "px";
+            var nWidth = parseInt(eWidth) + 50 + "px";
+            if (parseInt(eHeight) <= 400) {
+
+
+                img.style.height = nHeight;
+                img.style.width = nWidth;
+            } else {
+                alert("The size reached maximum hieght(400)")
+            }
+        }
+        function doZoomOut() {
+            var img = document.getElementById("aveng");
+            var eHeight = img.style.height;
+            var eWidth = img.style.width;
+
+            var nHeight = parseInt(eHeight) - 50 + "px";
+            var nWidth = parseInt(eWidth) - 50 + "px";
+            if (parseInt(eHeight) >= 200) {
+                img.style.height = nHeight;
+                img.style.width = nWidth;
+            } else{
+                alert("The size reached minimum hieght(200)")
+            }
+        }
+
+       
+    </script>
+</head>
+
+<body>
+    <center> 
+        <button onclick="doZoomIn()">ZoomIn</button> &nbsp;
+        <button onclick="doZoomOut()">ZoomOut</button><br><br>
+        <img src="AVG.jpg" id="aveng" style="height: 300px; width:300px;"> <br><br>
+       
+    </center>
+</body>
+
+</html>

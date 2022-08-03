@@ -1,0 +1,31 @@
+<!DOCTYPE html >
+<html lang="en" style="background-color:rgb(246, 193, 190);">
+
+<head >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center> 
+       
+       <div> 
+        <img src="wait5.jpg" id="wait5" height="400px" width="400px" > <br><br>
+       
+        <img src="wait1.jpg" id="wait1" height="150px" width="150px" onmouseover="setnewimage(this)"  onmouseout="setoldimage()">&nbsp;
+        <img src="wait2.jpg" id="wait2" height="150px" width="150px" onmouseover="setnewimage(this)" onmouseout="setoldimage()">&nbsp;
+        <img src="wait3.jpg" id="wait3" height="150px" width="150px" onmouseover="setnewimage(this)" onmouseout="setoldimage()">&nbsp;
+        <img src="wait4.jpg" id="wait4" height="150px" width="150px" onmouseover="setnewimage(this)" onmouseout="setoldimage()">
+    </div>
+
+    </center>
+</body >
+<script>
+     function setnewimage(image) {
+ document.getElementById("wait5").src = image.src;
+ }
+  
+ </script>
+</html>

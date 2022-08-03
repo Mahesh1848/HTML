@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahesh</title>
+    <script>
+        function docalc(op){
+            var num1 = document.getElementById("ipt1").value;
+            var num2 = document.getElementById("ipt2").value;
+            var result;
+            var span = document.getElementById("result");
+
+            if (!isNaN(num1) && !isNaN(num2)) {
+                span.style.color="blue";
+                switch (op) {
+                            case "add":
+                            result=Number(num1)+Number(num2);
+                            break;
+                            case "sub":
+                            result= num1 - num2;
+                            break;
+
+                            case "mul":
+                            result= num1 * num2;
+                            break;
+
+                            case "div":
+                            result= num1 / num2;
+                            break;
+                            
+                            
+
+                
+                    default:
+                        result= "Something went wrong";
+                        span.style.color="red";
+                        break;
+                }
+
+                
+            } else {
+                result= "please enter the valid input bro!!! ";
+                span.style.color="red";
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</head>
+<body  style="background-color: rgb(241, 248, 184); margin:auto;"> 
+   <div >
+  <center> <h1 style="background-color: rgb(179, 201, 252);">MY CALCULATOR</h1>
+        Number1 <input type="text" id="ipt1"><br><br>
+        Number2 <input type="text" id="ipt2"><br><br><br>
+    
+        <button onclick="docalc('add')"><img src="add.png"  alt="add"  height="25px" width="25px"></button> &nbsp;
+        <button onclick="docalc('sub')"><img src="sub.png" alt="sub" height="25px" width="25px"></button>&nbsp;
+        <button onclick="docalc('mul')"><img src="multiply.png" alt="mul" height="25px" width="25px"></button>&nbsp;
+        <button onclick="docalc('div')"><img src="divide.png" alt="div" height="25px" width="25px"></button> <br><br>
+    
+        Result: <span id="result">answer</span></center> 
+
+
+   </div>
+  
+   
+<script>
+    function docalci(){
+        var Mark = document.getElementById("ipt3").value;
+        var grade;
+        var span = document.getElementById("grade");
+        if (Mark>=90) {
+            grade="A+"
+        } else if(Mark>=80){
+            grade="B+"
+        } else if(Mark>=60){
+            grade="C+"
+        } else if(Mark>=35){
+            grade="D+"
+            span.style.color="blue";
+        } else if(Mark<=34){
+            grade="Fail"
+            span.style.color="red";
+        } else if (mark=String){
+            grade="This is invalid bro !! ."
+            span.style.color="green";
+        }
+        document.getElementById("grade").innerHTML=grade;
+    }
+</script>
+   <div>
+   <center> <h1 style="background-color: rgb(179, 201, 252);">GRADE CALCULATOR</h1>
+        Mark <input type="text" id="ipt3"><br><br>
+        Grade: <span id="grade">Pass/Fail</span> <br><br>
+        <button onclick="docalci()">Result</button> 
+    </center> 
+   </div>
+   
+</body>
+</html>
